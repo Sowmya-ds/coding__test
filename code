@@ -1,1 +1,14 @@
-I did not attend the coding assessment.
+Problem 2
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+sum = 0
+for i in range(k):
+    sum += arr[i]
+
+max_sum = sum
+for i in range(k, n):
+    sum = sum + arr[i] - arr[i - k]
+    if window_sum > max_sum:
+        max_sum = window_sum
+print(max_sum)
